@@ -6,7 +6,6 @@
 // The editor creator to use.
 import InlineEditorBase from '@ckeditor/ckeditor5-editor-inline/src/inlineeditor';
 
-import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
@@ -20,14 +19,22 @@ import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
 import Superscript from '@ckeditor/ckeditor5-basic-styles/src/superscript';
 import Subscript from '@ckeditor/ckeditor5-basic-styles/src/subscript';
 import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+import Clipboard from '@ckeditor/ckeditor5-clipboard/src/clipboard';
+import Typing from '@ckeditor/ckeditor5-typing/src/typing';
+import Undo from '@ckeditor/ckeditor5-undo/src/undo';
+
+import ReverseEnter from '@elliottpost/ckeditor5-reverse-enter/src/reverseenter';
+import ReverseShiftEnter from '@elliottpost/ckeditor5-reverse-enter/src/reverseshiftenter';
 
 export default class InlineEditor extends InlineEditorBase {}
 
 // Plugins to include in the build.
 InlineEditor.builtinPlugins = [
-	Essentials,
 	Autoformat,
 	Bold,
+	Clipboard,
+	Typing,
+	Undo,
 	Italic,
 	Underline,
 	Strikethrough,
@@ -38,7 +45,9 @@ InlineEditor.builtinPlugins = [
 	List,
 	Paragraph,
 	PasteFromOffice,
-	RemoveFormat
+	RemoveFormat,
+	ReverseEnter,
+	ReverseShiftEnter
 ];
 
 // Editor configuration.
